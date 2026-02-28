@@ -2,15 +2,23 @@
 
 ## Workflow Rules
 - **Commit early and often.** Every meaningful change gets a commit with a clear message explaining *why*, not just what.
-- **Do not enter planning-only modes.** All thinking must produce files and commits. If scope is unclear, create a `planning/` directory and write `.md` files there instead of using an internal planning mode.
-- **Keep this file up to date.** As the project takes shape, record architectural decisions, conventions, and anything needed to work effectively in this repo.
-- **Update README.md regularly.** It should always reflect the current state of the project for human readers.
+- **Do not enter planning-only modes.** All thinking must produce files and commits.
+- **Keep this file up to date.**
+- **Update README.md regularly.**
 
 ## Project Description
-_TODO: Describe what this project is about._
+A visual tool for exploring knowledge graphs. Write SPARQL or Cypher queries and see results as interactive node-link diagrams. Supports Wikidata, Neo4j, and local RDF files.
 
 ## Architecture and Conventions
-_TODO: Document key decisions, file structure, and patterns as they emerge._
+- **Frontend:** Static HTML/JS with D3.js or Cytoscape.js
+- **Query backends:** SPARQL (via SPARQLWrapper or direct fetch), Cypher (via Neo4j HTTP API)
+- **Structure:**
+  - `index.html` -- Main app shell
+  - `js/query-editor.js` -- Query input with syntax highlighting
+  - `js/graph-renderer.js` -- D3/Cytoscape graph visualization
+  - `js/backends/` -- SPARQL and Cypher query execution
+  - `examples/` -- Pre-built example queries
+- **Deployment:** GitHub Pages
 
 # currentDate
 Today's date is 2026-02-28.
