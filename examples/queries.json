@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Shinto shrine types",
+    "description": "Subclasses of Shinto shrines in Wikidata",
+    "query": "SELECT ?item ?itemLabel ?parent ?parentLabel WHERE {\n  ?item wdt:P279* wd:Q845945 .\n  ?item wdt:P279 ?parent .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en,ja\". }\n}\nLIMIT 80"
+  },
+  {
+    "name": "Japanese prefectures",
+    "description": "All 47 prefectures of Japan and their capitals",
+    "query": "SELECT ?prefecture ?prefectureLabel ?capital ?capitalLabel WHERE {\n  ?prefecture wdt:P31 wd:Q50337 .\n  OPTIONAL { ?prefecture wdt:P36 ?capital . }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en,ja\". }\n}\nLIMIT 60"
+  },
+  {
+    "name": "Subclasses of religious building",
+    "description": "Hierarchy of religious building types",
+    "query": "SELECT ?item ?itemLabel ?parent ?parentLabel WHERE {\n  ?item wdt:P279* wd:Q1088552 .\n  ?item wdt:P279 ?parent .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n}\nLIMIT 100"
+  },
+  {
+    "name": "Nobel Prize winners and fields",
+    "description": "Nobel laureates linked to their fields of work",
+    "query": "SELECT ?person ?personLabel ?field ?fieldLabel WHERE {\n  ?person wdt:P166 ?award .\n  ?award wdt:P31/wdt:P279* wd:Q7191 .\n  ?person wdt:P101 ?field .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n}\nLIMIT 80"
+  },
+  {
+    "name": "Programming languages and paradigms",
+    "description": "Programming languages linked to their paradigms",
+    "query": "SELECT ?lang ?langLabel ?paradigm ?paradigmLabel WHERE {\n  ?lang wdt:P31 wd:Q9143 .\n  ?lang wdt:P3966 ?paradigm .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n}\nLIMIT 80"
+  }
+]
